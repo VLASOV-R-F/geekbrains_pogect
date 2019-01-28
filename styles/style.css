@@ -7,6 +7,13 @@ body {
 .container {
     width: 1140px;
     margin: 0 auto;
+    padding: 0 15px;
+}
+
+@media (max-width: 1140px) {
+    .container{
+        width: auto;
+    }
 }
 
 .header {
@@ -14,12 +21,24 @@ body {
     border-bottom: 1px solid #ececec;
 }
 
+@media (max-width: 720px){
+    .header{
+        height: auto;
+    }
+}
+
 .headerInside {
     height: inherit;
-    /* background: lightgreen; */
     display: flex;
     flex-direction: row;
     align-items: center;
+}
+
+@media (max-width: 720px) {
+    .headerInside{
+        flex-direction: column;
+        padding: 15px 0;
+    }
 }
 
 .headerInside a {
@@ -34,6 +53,13 @@ body {
     font-size: 27px;
     font-weight: 300;
     padding-left: 60px;
+}
+
+@media (max-width: 720px) {
+    .logo,
+    .searchWrap{
+        margin-bottom: 15px;
+    }
 }
 
 .logo span {
@@ -80,6 +106,12 @@ body {
     margin-right: 25px;
 }
 
+@media (max-width: 720px) {
+    .headerCart{
+        display: none;
+    }
+}
+
 .accountBtn {
     padding: 15px;
     background-color: #f16d7f;
@@ -92,13 +124,26 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 0 15px;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 720px) {
+    .topNav{
+        height: auto;
+    }
 }
 
 .topNav a:not(:last-child) {
     margin-right: 45px;
 }
 
-.topNav a {
+@media (max-width: 720px) {
+    .topNav a:not(:last-child) {
+        margin-right: 15px;
+    }
+}
+    .topNav a {
     text-decoration: none;
     font-weight: 700;
     text-transform: uppercase;
@@ -106,10 +151,19 @@ body {
     color: #222222;
 }
 
+@media (max-width: 720px) {
+    .topNav a{
+        margin: 5px 0;
+    }
+}
+
 .topNav a:hover {
     color: #f16d7f;
 }
+/* Конец стилей шапки */
 
+
+/* Начало стилей index */
 .topBannerWrap {
     height: 610px;
     background-color: #e8e8e8;
@@ -368,17 +422,12 @@ body {
     font-size: 14px;
 }
 
-.subscribeWrap {
-    margin-top: 100px;
-    height: 438px;
-    background: url(../images/subscribe.jpg) no-repeat center bottom, #ccc;
-    background-blend-mode: overlay;
-    background-size: cover;
-}
+/* Конец стилей index */
 
-.subscribe {
-    display: flex;
-    height: inherit;
+/* Начало стилей shopping-cart */
+
+.newArrivalsWrap{
+    height: 150px;
 }
 
 .newArrivals {
@@ -387,6 +436,14 @@ body {
     justify-content: space-between;
     align-items: center;
     text-transform: uppercase;
+    background: #f8f3f4;
+}
+
+@media (max-width: 520px) {
+    .newArrivals {
+        flex-direction: column;
+        justify-content: center;
+    }
 }
 
 .newArrivals h1 {
@@ -689,9 +746,6 @@ body {
     border: none;
 }
 
-
-
-
 .reviews, .subscribeRight {
     width: calc(100% - 1px);
 }
@@ -721,6 +775,13 @@ body {
     font-style: italic;
     line-height: 26px;
     font-weight: 700;
+    white-space: pre-wrap;
+}
+
+@media (max-width: 480px) {
+    .subscribeWrap {
+        display: none;
+    }
 }
 
 .reviewName {
@@ -754,9 +815,186 @@ body {
     cursor: pointer;
 }
 
+/* Конец стилей shopping-cart */
+
+/* Начало стилей checkout */
+.fontsArrivalsWrap{
+    height: 148px;
+    background-color: #f8f3f4;
+}
+
+.orderMaking{
+    margin-top: 89px;
+}
+
+.orderMaking h2{
+    font-size: 16px;
+    font-weight: 700;
+
+}
+
+.orderMaking h3{
+    font-size: 13px;
+    font-weight: 400;
+    margin-top: 13px;
+}
+
+.orderMaking h2, .orderMaking h3, .checkPoints label{
+    color: #222;
+    text-transform: uppercase;
+}
+
+.registrationStage{
+    padding: 15px 0;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.flexStage{
+    display: flex;
+}
+
+@media (max-width: 698px) {
+    .flexStage {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+.checkPoints{
+    width: 50%;
+    margin: 39px 0 55px 35px;
+}
+
+@media (max-width: 544px) {
+    .checkPoints{
+        width: auto;
+    }
+}
+
+@media (max-width: 362px) {
+    .checkPoints{
+        margin: 0 0 55px -25px;
+    }
+}
+
+.checkPoints p {
+    color: #b3b2b2;
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.checkPoints form{
+    margin-top: 14px;
+}
+
+.checkPoints label{
+    font-size: 12px;
+}
+
+.formsMarg{
+    margin: 34px 0;
+}
+
+.formsMargRight{
+    margin: 24px 0;
+}
+
+.formsMarg label, .formsMarg input, .formsMargRight label, .formsMargRight input{
+    display: block;
+}
+
+@media (max-width: 622px) {
+    .forgotPassword{
+        display: block;
+        margin-top: 15px;
+    }
+}
+
+.loginForms{
+    width: 390px;
+    height: 40px;
+    border: 1px solid #eaeaea;
+    margin: 16px 0;
+    padding-left: 10px;
+    font-size: 14px;
+    color: #222;
+}
+
+@media (max-width: 860px) {
+    .loginForms{
+        width: 82%;
+    }
+}
+
+.forgotPassword{
+    color: #222;
+    margin-left: 20px;
+}
+
+.formsFlex{
+    display: flex;
+    margin-bottom: 10px;
+}
+label span, span{
+    color: red;
+}
+
+.checkPoints form input{
+    margin-right: 14px;
+}
+
+.fastCheck{
+    margin-top: 33px;
+}
+
+.button{
+    padding: 19px 53px;
+    border: 1px solid #eaeaea;
+    background-color: #ffffff;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-top: 25px;
+}
+
+/* Конец стилей checkout */
+
+/* Начало стилей подвала */
+
+.subscribeWrap {
+    margin-top: 100px;
+    height: 438px;
+    background: url(../images/subscribe.jpg) no-repeat center bottom, #ccc;
+    background-blend-mode: overlay;
+    background-size: cover;
+}
+
+@media (max-width: 480px) {
+    .subscribeWrap{
+        background: #f8f8f8;
+    }
+}
+
+.subscribe {
+    display: flex;
+    height: inherit;
+}
+
+@media (max-width: 1020px) {
+    .subscribe{
+        flex-wrap: wrap;
+    }
+}
+
 .subscribeDivider {
     width: 1px;
     background: #e3e3e3;
+}
+
+@media (max-width: 1175px) {
+    .subscribeDivider{
+        display: none;
+    }
 }
 
 .subscribeRight {
@@ -791,6 +1029,12 @@ body {
     border-top-left-radius: 23px;
     border-bottom-left-radius: 23px;
     float: left;
+}
+
+@media (max-width: 542px) {
+    .subscribeForm input {
+        width: auto;
+    }
 }
 
 .subscribeForm button {
